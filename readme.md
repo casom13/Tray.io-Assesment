@@ -6,11 +6,11 @@ Based on the provided [Program Requirements](https://gist.github.com/alirussell/
 
 ### Installation
 ```bash
-node install
+npm install
 ``` 
 
 ### Run the Program
 ```bash
-npm index.js -i <filename>
+node index.js -i <filename>
 ``` 
 Use `-i` to specify the input file to run the program. If no file is specified, provided input.txt will be used. 
