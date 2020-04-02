@@ -6,7 +6,7 @@ Based on the provided [Program Requirements](https://gist.github.com/alirussell/
 
 ### Installation
 ```bash
-node install
+npm install
 ``` 
 
 ### Run the Program
