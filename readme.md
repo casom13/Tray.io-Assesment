@@ -11,6 +11,6 @@ node install
 
 ### Run the Program
 ```bash
-node index.js -i <filename>
+npm index.js -i <filename>
 ``` 
 Use `-i` to specify the input file to run the program. If no file is specified, provided input.txt will be used. 
