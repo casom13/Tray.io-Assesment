@@ -3,7 +3,7 @@ const readline = require('readline');
 const fs = require('fs');
 
 program
-    .version('0.9')
+    .version('1.0')
     .option('-i, --input [input]', 'txt file containing run data', 'input.txt')
     .parse(process.argv);
 
@@ -19,15 +19,20 @@ const stream = readline.createInterface({
   terminal: false,
 });
 
+// open file and process line by line
 stream
     .on('line', (data) => {
       if (count === 1) {
+        // assign the first line to room size
         room = data.split(' ').map( Number );
       } else if (count === 2) {
+        // assign the second line to robot position
         position = data.split(' ').map( Number ); 
       } else if (isNaN(data.substring(0, 1))) {
+        // find the instruction line by ensuring the first char is not a number
         instructions = data.split('');
       } else {
+        // add the rest of the lines to the dirt map
         dirtmap.push(data.split(' ').map( Number ));
       }
       count += 1;
@@ -42,22 +47,30 @@ function robotAction(room, position, inst, map) {
   for (let i = 0; i < inst.length; i++) {
     // move in the correct direction
     if (inst[i] === 'N') {
+      // ensure there is space to move forward
       if (position[1] + 1 <= room[0]) {
+        // move forward
         position[1] += 1;
       }
     }
     if (inst[i] === 'S') {
-      if (position[1] - 1 <= room[0]) {
+      // ensure there is space to move backwards
+      if (position[1] - 1 >= 0) {
+        // move backwards
         position[1] -= 1;
       }
     }
     if (inst[i] === 'E') {
+      // ensure there is space to move right 
       if (position[0] + 1 <= room[1]) {
+        // move right
         position[0] += 1;
       }
     }
     if (inst[i] === 'W') {
-      if (position[0] - 1 <= room[1]) {
+      // ensure there is space to move left 
+      if (position[0] - 1 >= 0) {
+        // move left
         position[0] -= 1;
       }
     }
@@ -73,6 +86,6 @@ function robotAction(room, position, inst, map) {
     }
   }
   // output the answers
-  console.log(position);
+  console.log(position[0] + ' ' + position[1]);
   console.log(cleaned);
 }
