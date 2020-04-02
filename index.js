@@ -76,6 +76,7 @@ function robotAction(room, position, inst, map) {
     }
     // check for dirt
     const positionString = JSON.stringify(position);
+    // loop through the dirt map
     for (let j = 0; j < map.length; j++) {
       if (JSON.stringify(map[j]) === positionString) {
         // clean the dirt if we find some
