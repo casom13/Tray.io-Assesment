@@ -1,6 +1,6 @@
 ## Tray.io Technical Exercise
 
-A program that navigates an imaginary robotic hoover (much like a Roomba) through an equally imaginary room built in NodeJs using the [Commander](https://github.com/tj/commander.js/) command-line interface.
+A program that navigates an imaginary robotic hoover (much like a Roomba) through an equally imaginary room built in [NodeJs](https://nodejs.org/en/), and using the [Commander](https://github.com/tj/commander.js/) command-line interface.
 
 Based on the provided [Program Requirements](https://gist.github.com/alirussell/2d200d21f117f8d570667daa7acdbae5#file-readme-md)
 
